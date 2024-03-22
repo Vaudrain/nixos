@@ -30,9 +30,6 @@
           inherit user;
           inherit inputs;
         };
-
-
-        system = "x86_64-linux"; # TODO Needed?
         modules = [
           ./hosts         # default 'configuration.nix' for all hosts
           ./hosts/desktop # specific 'configuration.nix' for desktop target
@@ -40,10 +37,11 @@
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-          }
-          #home-manager.users.${user} {
-          #  imports = [ plasma-manager.homeManagerModules.plasma-manager ];
-          #}
+            home-manager.users.${user}.imports = [
+              plasma-manager.homeManagerModules.plasma-manager
+              ./modules/desktops/plasma.nix
+            ];
+          }      
         ];
       };
     };
