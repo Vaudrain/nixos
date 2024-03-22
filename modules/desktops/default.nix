@@ -1,0 +1,4 @@
+[
+  #./plasma.nix
+  ./sddm.nix
+]
