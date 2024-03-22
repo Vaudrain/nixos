@@ -37,6 +37,10 @@
       easyeffects
       wget
       ripgrep
+      wine
+      winetricks
+      wineWowPackages.staging
+      wineWowPackages.waylandFull
       fd
       unzip
       p7zip

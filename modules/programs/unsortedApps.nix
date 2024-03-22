@@ -5,7 +5,6 @@
       obs-studio-plugins.obs-vkcapture
       virt-manager
       docker
-      wine
       polychromatic
       xwayland
       jupyter
