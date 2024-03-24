@@ -68,17 +68,6 @@
   services = {
     blueman.enable = true;
     printing.enable = true;
-    xserver = {
-      enable = true;
-      displayManager.sddm = {
-        enable = true;
-        autoNumlock = true;
-      };
-      xkb = {
-        layout = "gb";
-        variant = "";
-      };
-    };
     desktopManager.plasma6.enable = true;
     pipewire = {
       enable = true;
