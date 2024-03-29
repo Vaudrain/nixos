@@ -50,6 +50,8 @@
       nano
       libnotify
       openrazer-daemon
+      direnv
+      nix-direnv-flakes
     ];
   };
 
@@ -66,7 +68,7 @@
   };
 
   services = {
-    blueman.enable = true;
+    # blueman.enable = true;
     printing.enable = true;
     desktopManager.plasma6.enable = true;
     pipewire = {

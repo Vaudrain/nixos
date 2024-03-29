@@ -7,7 +7,6 @@
       docker
       polychromatic
       xwayland
-      jupyter
       #python3
       appimage-run
 
