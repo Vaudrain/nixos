@@ -7,7 +7,6 @@
       docker
       polychromatic
       xwayland
-      #python3
       appimage-run
 
       #Communication
@@ -26,6 +25,7 @@
       vlc
       feh
       zotero
+      ncdu
       libreoffice-qt
     ];
 }
