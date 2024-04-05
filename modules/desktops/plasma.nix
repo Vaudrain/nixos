@@ -13,8 +13,8 @@
     workspace = {
       clickItemTo = "select";
       tooltipDelay = 5;
-      theme = "breeze-dark";
-      colorScheme = "BreezeDark";
+      #theme = "breeze-dark";
+      #colorScheme = "BreezeDark";
       # wallpaper = "./wallpapers/amirdrassil.png"; #TODO Not sure how to do this, not major
     };
     

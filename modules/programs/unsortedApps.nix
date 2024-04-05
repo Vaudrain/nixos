@@ -8,9 +8,11 @@
       polychromatic
       xwayland
       appimage-run
+      plasma-browser-integration
 
       #Communication
       discord
+      vesktop
       zoom-us
       teams-for-linux
       slack
