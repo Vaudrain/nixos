@@ -86,7 +86,16 @@
       };
     };
     mullvad-vpn.enable = true;
-    flatpak.enable = true;
+    flatpak = {
+      enable = true;
+      packages = [
+        "com.usebottles.bottles"
+      ];
+      update.auto = {
+        enable = true;
+        onCalendar = "daily";
+      };
+    };
   };
 
   nix = {

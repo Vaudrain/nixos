@@ -10,4 +10,3 @@ In progress NixOS setup, growing as I go
 - SDDM / KDE display layout
 - reorganise
 - maybe more config settings?
-- can I set up flatpak installs?
