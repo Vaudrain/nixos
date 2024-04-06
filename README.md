@@ -6,7 +6,8 @@ In progress NixOS setup, growing as I go
 
 - Finish README.md
 - unsortedApps.nix
-- SDDM settings
+- SDDM theming seems to be a mystery
+- SDDM / KDE display layout
 - reorganise
 - maybe more config settings?
 - can I set up flatpak installs?
