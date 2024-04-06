@@ -5,8 +5,7 @@ In progress NixOS setup, growing as I go
 ## To Do
 
 - Finish README.md
-- unsortedApps.nix
-- SDDM theming seems to be a mystery
-- SDDM / KDE display layout
-- reorganise
-- maybe more config settings?
+- Laptop host
+- SDDM
+    - theming
+    - display layout
