@@ -7,7 +7,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nouveau.modeset=0" "nvidia-drm.modeset=1" ];
     loader = {
