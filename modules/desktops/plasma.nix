@@ -31,7 +31,7 @@
         hiding = "dodgewindows";
         minLength = 0;
         maxLength = 2500;
-        screen = 1;
+        screen = 0;
         floating = true;
         location = "bottom";
         widgets = [
@@ -52,7 +52,7 @@
       {
         location = "top";
         height = 36;
-        screen = 0;
+        screen = 1;
         hiding = "none";
         widgets = [
           "org.kde.plasma.panelspacer"
