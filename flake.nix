@@ -16,9 +16,11 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, ... }: 
+  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nix-flatpak, ... }: 
 
   let
     user = "vaud";
@@ -33,7 +35,7 @@
         modules = [
           ./hosts         # default 'configuration.nix' for all hosts
           ./hosts/desktop # specific 'configuration.nix' for desktop target
-          #./old-config/configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
