@@ -8,5 +8,7 @@
       mangohud
       gamescope
       protonup-qt
+      obs-studio
+      obs-studio-plugins.obs-vkcapture
     ];
 }
