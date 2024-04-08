@@ -3,6 +3,7 @@
 {
   home-manager.users.${user}.home.packages = with pkgs; [
       steam
+      gpu-screen-recorder-gtk
       gamemode
       vkbasalt
       mangohud
