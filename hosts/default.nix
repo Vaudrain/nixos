@@ -76,12 +76,30 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
       extraConfig.pipewire."92-low-latency" = {
         context.properties = {
-          default.clock.rate = 48000;
+          default.clock.rate = 192000;
+          default.clock.allowed-rates = "48000,88200,96000,176400,192000";
           default.clock.quantum = 1024;
-          default.clock.min-quantum = 1024;
-          default.clock.max-quantum = 1024;
+          default.clock.min-quantum = 32;
+          default.clock.max-quantum = 8192;
+        };
+        context.modules = [
+          {
+            name = "libpipewire-module-protocol-pulse";
+            args = {
+              pulse.min.req = "32/192000";
+              pulse.default.req = "1024/192000";
+              pulse.max.req = "8192/192000";
+              pulse.min.quantum = "32/192000";
+              pulse.max.quantum = "8192/192000";
+            };
+          }
+        ];
+        stream.properties = {
+          node.latency = "8/192000";
+          resample.quality = 1;
         };
       };
     };
