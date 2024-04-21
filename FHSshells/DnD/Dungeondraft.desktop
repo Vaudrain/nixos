@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.1.0.6
+Name=Dungeondraft
+Comment=Dungeondraft is a tabletop encounter map creation tool designed to draw aesthetic maps without the typical frustrations and time investment.
+Exec=nix-shell ./dungeondraft.nix
+Path=/home/vaud/Applications/D&D/Dungeondraft-1.1.0.5-Linux64/
+Icon=/home/vaud/Applications/D&D/Dungeondraft-1.1.0.5-Linux64/Dungeondraft.png
+Terminal=false
+Type=Application
+Categories=Graphics

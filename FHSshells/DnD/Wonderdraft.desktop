@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.1.8.1
+Name=Wonderdraft
+Comment=Wonderdraft is a powerful yet intuitive fantasy map creation tool.
+Exec=nix-shell ./wonderdraft.nix
+Path=/home/vaud/Applications/D&D/Wonderdraft-1.1.8.1-Linux64/
+Icon=/home/vaud/Applications/D&D/Wonderdraft-1.1.8.1-Linux64/Wonderdraft.png
+Terminal=false
+Type=Application
+Categories=Graphics
