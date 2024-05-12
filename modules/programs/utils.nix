@@ -10,6 +10,8 @@
       ncdu
       mullvad-vpn
       neofetch
+      ventoy-full
+      gnome.gnome-disk-utility
 
       # Media utils
       vlc
