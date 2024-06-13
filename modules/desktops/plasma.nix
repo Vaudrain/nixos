@@ -5,6 +5,7 @@
     shortcuts = {
       "kwin"."Overview" = "Meta";
       "kmix"."mic_mute" = ["Pause" "Microphone Mute"];
+      "services/org.kde.spectacle.desktop"."_launch" = "Meta+Shift+P";
     };
     
     spectacle.shortcuts = {
