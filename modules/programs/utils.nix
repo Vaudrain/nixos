@@ -12,6 +12,7 @@
       neofetch
       ventoy-full
       gnome.gnome-disk-utility
+      psensor
 
       # Media utils
       vlc
