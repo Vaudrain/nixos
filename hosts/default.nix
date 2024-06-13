@@ -103,7 +103,20 @@
         };
       };
     };
-    mullvad-vpn.enable = true;
+    mullvad-vpn = {
+      enable = true;
+      enableExcludeWrapper = true;
+    };
+    resolved = {
+      enable = true;
+      dnssec = "true";
+      domains = [ "~." ];
+      fallbackDns = [
+        "1.1.1.1"
+        "1.0.0.1"
+      ];
+      dnsovertls = "true";
+    };
     flatpak = {
       enable = true;
       packages = [
