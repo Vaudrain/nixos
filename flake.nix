@@ -17,7 +17,7 @@
       };
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
 
   outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nix-flatpak, ... }: 

@@ -19,7 +19,7 @@
     workspace = {
       clickItemTo = "select";
       tooltipDelay = 3;
-      cursorTheme = "Breeze";
+      cursor.theme = "Breeze";
       iconTheme = "candy-icons";
     };
 
