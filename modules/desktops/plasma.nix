@@ -27,14 +27,10 @@
 
     panels = [
       {
-        height = 44;
-        alignment = "center";
-        hiding = "dodgewindows";
-        minLength = 0;
-        maxLength = 2500;
-        screen = 0;
-        floating = true;
-        location = "bottom";
+        location = "top";
+        height = 36;
+        screen = 1;
+        hiding = "none";
         widgets = [
           "org.kde.plasma.kickoff"
           {
@@ -48,14 +44,6 @@
               ];
             };
           }
-        ];
-      }
-      {
-        location = "top";
-        height = 36;
-        screen = 1;
-        hiding = "none";
-        widgets = [
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
           "org.kde.plasma.digitalclock"
