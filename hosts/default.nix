@@ -67,8 +67,13 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config.common.default = "*";
+  };
+
   services = {
-    # blueman.enable = true;
     printing.enable = true;
     desktopManager.plasma6.enable = true;
     pipewire = {
@@ -128,6 +133,8 @@
       };
     };
   };
+
+  # systemd.services.flatpak-managed-install.wantedBy = lib.mkForce [ ]; # In case this service is playing up
 
   nix = {
     settings = {

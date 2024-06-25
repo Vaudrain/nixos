@@ -7,11 +7,10 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_6_9;
     blacklistedKernelModules = [ "nouveau"];
-    kernelParams = [ "nouveau.modeset=0" "nvidia-drm.modeset=1" ];
+    kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
     loader = {
-      #systemd-boot.enable = true; TODO Did grub work?
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
@@ -21,7 +20,7 @@
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;                
-        configurationLimit = 10;
+        configurationLimit = 15;
       };
       timeout = 1;   
     };
@@ -51,10 +50,9 @@
       nvidiaPersistenced = true;
       #package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [ vaapiVdpau ];
     };
   };
