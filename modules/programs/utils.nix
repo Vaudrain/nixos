@@ -13,7 +13,6 @@
       ventoy-full
       gnome.gnome-disk-utility
       psensor
-      linux-wallpaperengine-unstable
 
       # Media utils
       vlc
