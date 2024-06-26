@@ -7,7 +7,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_6_9;
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
     loader = {
@@ -21,6 +21,7 @@
         efiSupport = true;
         useOSProber = true;                
         configurationLimit = 15;
+        memtest86.enable = true;
       };
       timeout = 1;   
     };
