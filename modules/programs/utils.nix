@@ -5,6 +5,7 @@
       docker
       polychromatic
       xwayland
+      xwaylandvideobridge
       appimage-run
       plasma-browser-integration
       ncdu
@@ -18,5 +19,6 @@
       vlc
       feh
       kate
+      webcamoid
     ];
 }
