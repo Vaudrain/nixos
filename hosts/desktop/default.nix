@@ -1,10 +1,11 @@
-{ config, pkgs, inputs, user, ... }:
+{ config, pkgs, inputs, user, lib, ... }:
 {
   imports = [
     ./hardware.nix
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
+  services.udev.packages = [ steam ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_9;
@@ -43,8 +44,7 @@
     };
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
+      powerManagement.enable = false;
       open = false;
       nvidiaSettings = true;
       forceFullCompositionPipeline = true;
@@ -59,11 +59,12 @@
   };
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "555.42.02";
-    sha256_64bit = "sha256-k7cI3ZDlKp4mT46jMkLaIrc2YUx1lh1wj/J4SVSHWyk=";
-    sha256_aarch64 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
-    openSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
-    settingsSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA="; 
-    persistencedSha256 = "sha256-3ae31/egyMKpqtGEqgtikWcwMwfcqMv2K4MVFa70Bqs=";
+    version = "555.58";
+
+    sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
+    sha256_aarch64 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
+    openSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
+    settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
+    persistencedSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
   };
 }
