@@ -53,6 +53,9 @@
       direnv
       nix-direnv-flakes
     ];
+    variables = {
+      KWIN_DRM_DISABLE_TRIPLE_BUFFERING = 1;
+    };
   };
 
   programs = {
