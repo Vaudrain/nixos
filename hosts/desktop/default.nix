@@ -6,12 +6,11 @@
 
   services.xserver.videoDrivers = ["nvidia"];
   services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="users", OPTIONS+="static_node=uinput"
+    KERNEL=="uinput", MODE="0606", GROUP="users", OPTIONS+="static_node=uinput"
   '';
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_9;
-    kernelModules = [ "uinput" ];
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
     loader = {
