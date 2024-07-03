@@ -6,11 +6,12 @@
 
   services.xserver.videoDrivers = ["nvidia"];
   services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0606", GROUP="users", OPTIONS+="static_node=uinput"
+    KERNEL=="uinput", MODE="0666", GROUP="users", OPTIONS+="static_node=uinput"
   '';
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_9;
+    kernelModules = [ "uinput" ];
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
     loader = {
@@ -53,9 +54,16 @@
       nvidiaPersistenced = true;
       #package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
-    graphics = {
+    # Values to be used when upgrading to next stable release.
+    # graphics = {
+    #   enable = true;
+    #   enable32Bit = true;
+    #   extraPackages = with pkgs; [ vaapiVdpau ];
+    # };
+    opengl = {
       enable = true;
-      enable32Bit = true;
+      driSupport = true;
+      driSupport32Bit = true;
       extraPackages = with pkgs; [ vaapiVdpau ];
     };
   };
