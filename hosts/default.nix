@@ -4,7 +4,7 @@
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "audio" "camera" "networkmanager" "video" "wheel" "openrazer" "docker" "plugdev" ];
+    extraGroups = [ "audio" "camera" "networkmanager" "video" "wheel" "openrazer" "docker" "plugdev" "user-with-access-to-virtualbox" "libvirtd" ];
   };
 
   time.timeZone = "Europe/London";

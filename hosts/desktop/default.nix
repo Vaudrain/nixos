@@ -10,7 +10,7 @@
   '';
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_9;
+    kernelPackages = pkgs.linuxPackages_xanmod;
     kernelModules = [ "uinput" ];
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
