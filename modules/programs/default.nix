@@ -1,5 +1,6 @@
 [
   ./firefox/firefox.nix
+  ./firefox/floorp.nix
   ./communication.nix
   ./dev.nix
   ./docs.nix
