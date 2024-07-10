@@ -10,9 +10,9 @@
       plasma-browser-integration
       ncdu
       mullvad-vpn
-      neofetch
+      fastfetch
       ventoy-full
-      gnome.gnome-disk-utility
+      gnome-disk-utility
       psensor
 
       # Media utils
