@@ -2,8 +2,7 @@
   description = "Vaud NixOS setup.";
 
   inputs = {    
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-24.05"; };
-    nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
@@ -19,10 +18,10 @@
       };
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nixpkgs-unstable, nur, nix-flatpak, ... }: 
+  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nur, nix-flatpak, ... }: 
 
   let
     user = "vaud";
@@ -30,7 +29,7 @@
     overlays = [
       nur.overlay
     ];
-    upkgs = import nixpkgs-unstable { 
+    upkgs = import nixpkgs { 
       inherit system;
       overlays = overlays;
       config = {
@@ -47,9 +46,9 @@
         };
         modules = [
           { nixpkgs.config.pkgs = upkgs; }
+          nix-flatpak.nixosModules.nix-flatpak
           ./hosts         # default 'configuration.nix' for all hosts
           ./hosts/desktop # specific 'configuration.nix' for desktop target
-          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

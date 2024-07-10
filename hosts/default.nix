@@ -129,15 +129,17 @@
       enable = true;
       packages = [
         "com.usebottles.bottles"
+        "one.ablaze.floorp"
       ];
-      update.auto = {
-        enable = true;
-        onCalendar = "daily";
+      update = {
+        onActivation = true;
+        auto = {
+          enable = true;
+          onCalendar = "daily";
+        };
       };
     };
   };
-
-  # systemd.services.flatpak-managed-install.wantedBy = lib.mkForce [ ]; # In case this service is playing up
 
   nix = {
     settings = {
@@ -149,7 +151,7 @@
   };
 
   system = {
-    stateVersion = "23.11"; # Did you read the comment?
+    stateVersion = "23.11"; # Do not change this - it should remain at the version first installed.
     autoUpgrade = {
       enable = true;
       allowReboot = true;
