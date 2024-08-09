@@ -12,7 +12,7 @@
       mullvad-vpn
       fastfetch
       ventoy-full
-      gnome-disk-utility
+      gnome.gnome-disk-utility
       psensor
 
       # Media utils
@@ -20,5 +20,6 @@
       feh
       kate
       webcamoid
+      gimp
     ];
 }

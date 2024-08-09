@@ -54,9 +54,16 @@
       nvidiaPersistenced = true;
       #package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
-    graphics = {
+    # Values to be used when upgrading to next stable release.
+    # graphics = {
+    #   enable = true;
+    #   enable32Bit = true;
+    #   extraPackages = with pkgs; [ vaapiVdpau ];
+    # };
+    opengl = {
       enable = true;
-      enable32Bit = true;
+      driSupport = true;
+      driSupport32Bit = true;
       extraPackages = with pkgs; [ vaapiVdpau ];
     };
   };
