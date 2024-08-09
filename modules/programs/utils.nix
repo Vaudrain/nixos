@@ -20,7 +20,6 @@
       feh
       kate
       webcamoid
-      gimp
     ];
 
   services = {

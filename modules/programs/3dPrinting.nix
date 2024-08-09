@@ -1,7 +1,7 @@
 { pkgs, user, ... }:
 
 {
-  home-manager.users.${user}.home.packages = with pkgs; [      
+  home-manager.users.${user}.home.packages = with pkgs; [
       bambu-studio
       orca-slicer
     ];
