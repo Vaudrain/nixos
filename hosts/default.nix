@@ -127,10 +127,6 @@
     };
     flatpak = {
       enable = true;
-      packages = [
-        "com.usebottles.bottles"
-        "one.ablaze.floorp"
-      ];
       update = {
         onActivation = true;
         auto = {

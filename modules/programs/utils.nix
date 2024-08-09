@@ -22,4 +22,13 @@
       webcamoid
       gimp
     ];
+
+  services = {
+    flatpak = {
+      packages = [
+        "com.usebottles.bottles"
+        "one.ablaze.floorp"
+      ];
+    };
+  };
 }
