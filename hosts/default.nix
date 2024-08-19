@@ -130,7 +130,7 @@
       update = {
         onActivation = true;
         auto = {
-          enable = false;
+          enable = true;
           onCalendar = "daily";
         };
       };
