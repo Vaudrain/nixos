@@ -34,6 +34,8 @@
   sound.enable = true;
 
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
+  nixpkgs.config.cudaSupport = true; # For Cuda
+
 
   hardware = {
     pulseaudio.enable = false;
