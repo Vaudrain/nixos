@@ -2,8 +2,7 @@
   description = "Vaud NixOS setup.";
 
   inputs = {    
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-24.05"; };
-    nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     nur.url = "github:nix-community/NUR";
 
     home-manager = {
@@ -22,7 +21,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nixpkgs-unstable, nur, nix-flatpak, ... }: 
+  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nur, nix-flatpak, ... }: 
 
   let
     user = "vaud";
@@ -30,13 +29,6 @@
     overlays = [
       nur.overlay
     ];
-    upkgs = import nixpkgs-unstable { 
-      inherit system;
-      overlays = overlays;
-      config = {
-        allowUnfree = true;
-      }; 
-    };
   in
   {
     nixosConfigurations = {
@@ -46,7 +38,7 @@
           inherit inputs;
         };
         modules = [
-          { nixpkgs.config.pkgs = upkgs; }
+          { nixpkgs.config.pkgs = nixpkgs; }
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts         # default 'configuration.nix' for all hosts
           ./hosts/desktop # specific 'configuration.nix' for desktop target
@@ -57,7 +49,7 @@
               plasma-manager.homeManagerModules.plasma-manager
               ./modules/desktops/plasma.nix
             ];
-            nixpkgs.config.pkgs = upkgs;
+            nixpkgs.config.pkgs = nixpkgs;
             nixpkgs.overlays = overlays;
           }      
         ];

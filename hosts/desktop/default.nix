@@ -31,8 +31,6 @@
     };
   };
 
-  sound.enable = true;
-
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
   nixpkgs.config.cudaSupport = true; # For Cuda
 
@@ -56,16 +54,9 @@
       nvidiaPersistenced = true;
       #package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
-    # Values to be used when upgrading to next stable release.
-    # graphics = {
-    #   enable = true;
-    #   enable32Bit = true;
-    #   extraPackages = with pkgs; [ vaapiVdpau ];
-    # };
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [ vaapiVdpau ];
     };
   };

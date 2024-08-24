@@ -12,8 +12,9 @@
       mullvad-vpn
       fastfetch
       ventoy-full
-      gnome.gnome-disk-utility
+      gnome-disk-utility
       psensor
+      deluge
 
       # Media utils
       vlc
