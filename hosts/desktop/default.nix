@@ -10,7 +10,7 @@
   '';
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelModules = [ "uinput" ];
     blacklistedKernelModules = [ "nouveau"];
     kernelParams = [ "nomodeset" "nouveau.modeset=0" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" "NVreg_EnableGpuFirmware=0" "nvidia.NVreg_EnableGpuFirmware=0" ];
@@ -32,7 +32,7 @@
   };
 
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
-  nixpkgs.config.cudaSupport = true; # For Cuda
+  #nixpkgs.config.cudaSupport = true; # For Cuda
 
 
   hardware = {
