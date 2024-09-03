@@ -15,6 +15,7 @@
       gnome-disk-utility
       psensor
       deluge
+      baobab
 
       # Media utils
       vlc
