@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-let
-  sddm-theme = (pkgs.callPackage ./sugar-dark/default.nix {});
-in {
+{ pkgs, lib, ... }:
+
+{
     environment.systemPackages = with pkgs; [ 
         pkgs.xorg.xrandr
         libsForQt5.qt5.qtquickcontrols2   
@@ -10,26 +9,9 @@ in {
         libsForQt5.qt5.qtsvg
         qt6.qt5compat
         qt6.qtsvg
-        sddm-theme.sddm-sugar-dark
-        where-is-my-sddm-theme
     ];
     services = {
         xserver = {
-            xrandrHeads = [
-                {
-                    output = "DP-1";
-                    primary = true;
-                }
-                {
-                    output = "DP-2";
-                    monitorConfig = ''Option "Enable" "false"'';
-                }
-                {
-                    output = "HDMI-A-1";
-                    monitorConfig = ''Option "Enable" "false"'';
-                }
-            ];
-            enable = true;
             xkb = {
                 layout = "gb";
                 variant = "";
@@ -38,9 +20,29 @@ in {
 
         displayManager.sddm = {
             enable = true;
-            wayland.enable = true;
+            package = pkgs.lib.mkForce pkgs.libsForQt5.sddm;
+            extraPackages = pkgs.lib.mkForce [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
             autoNumlock = true;
-            theme = "where_is_my_sddm_theme";
+            wayland.enable = true;
+            setupScript = ''
+                ${pkgs.numlockx}/bin/numlockx on
+            '';
+            sugarCandyNix = {
+                enable = true;
+                settings = {
+                    Background = ../wallpapers/Hallowfall.jpg;
+                    ScreenWidth = 2560;
+                    ScreenHeight = 1400;
+                    FormPosition = "center";
+                    RoundCorners = 2;
+                    HaveFormBackground = false;
+                    PartialBlur = true;
+                    ForceLastUser = true;
+                    ForcePasswordFocus = true;
+                    HeaderText = "";
+                    BlurRadius = 10;
+                };
+            };
         };
     };
 }

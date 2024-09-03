@@ -1,5 +1,10 @@
-{ pkgs, user, ... }:
+{ pkgs, user, lib, ... }:
+
 {
+  home.packages = with pkgs; [
+    plasmusic-toolbar
+  ];
+
   programs.plasma = {
     enable = true;
     shortcuts = {
@@ -23,7 +28,7 @@
       iconTheme = "candy-icons";
     };
 
-    workspace.wallpaper = ./wallpapers/amirdrassil.jpg;
+    workspace.wallpaper = lib.cleanSource ./wallpapers/IsleOfDorn.jpg;
 
     panels = [
       {
@@ -39,11 +44,14 @@
               General.launchers = [
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
-                "applications:firefox.desktop"
+                "applications:obsidian.desktop"
+                "applications:one.ablaze.floorp.desktop"
                 "applications:vesktop.desktop"
               ];
             };
           }
+          "org.kde.plasma.panelspacer"
+          "plasmusic-toolbar"
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
           "org.kde.plasma.digitalclock"

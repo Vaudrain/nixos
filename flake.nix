@@ -18,10 +18,15 @@
       };
     };
 
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs@{ self, home-manager, plasma-manager, nixpkgs, nur, nix-flatpak, ... }: 
+  outputs = inputs@{ self, home-manager, plasma-manager, sddm-sugar-candy-nix, nixpkgs, nur, nix-flatpak, ... }: 
 
   let
     user = "vaud";
@@ -39,6 +44,7 @@
         };
         modules = [
           { nixpkgs.config.pkgs = nixpkgs; }
+          sddm-sugar-candy-nix.nixosModules.default
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts         # default 'configuration.nix' for all hosts
           ./hosts/desktop # specific 'configuration.nix' for desktop target
