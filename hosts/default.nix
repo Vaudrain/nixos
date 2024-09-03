@@ -79,6 +79,7 @@
   services = {
     printing.enable = true;
     desktopManager.plasma6.enable = true;
+    libinput.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
