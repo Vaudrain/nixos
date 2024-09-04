@@ -9,9 +9,12 @@
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
       kernelModules = [ ];
     };
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
-    extraModprobeConfig = ''options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1'';
+    kernelModules = [ "kvm-amd" "snd-usb-audio" ];
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    extraModprobeConfig = ''
+        options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+        options snd_usb_audio implicit_fb=1 lowlatency=0
+      '';
   };
 
   fileSystems."/" =
