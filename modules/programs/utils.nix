@@ -16,7 +16,7 @@
       psensor
       deluge
       baobab
-      floorp
+      usbutils
 
       # Media utils
       vlc
@@ -28,7 +28,8 @@
   services = {
     flatpak = {
       packages = [
-        "com.usebottles.bottles"     
+        "com.usebottles.bottles"
+        { appId = "one.ablaze.floorp"; origin = "flathub"; commit = "8521b33212e7e7cad2f3fd829db9c450556464aa5b94bba6a1abbd44103eba94"; } 
       ];
     };
   };
