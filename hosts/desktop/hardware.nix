@@ -41,4 +41,5 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   hardware.cpu.amd.updateMicrocode = config.hardware.enableRedistributableFirmware;
+  hardware.steam-hardware.enable = true;
 }
