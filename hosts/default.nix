@@ -76,6 +76,23 @@
     config.common.default = "*";
   };
 
+  systemd.services.fix-behringer-audio = {
+    enable = true;
+    description = "Fixes behringer audio interface suspend bug";
+    unitConfig = {
+      type = "simple";
+      after = "suspend.target";
+    };
+    serviceConfig = {
+      User = "root";
+      Type = "oneshot";
+      ExecStartPre= "sleep 5";
+      ExecStart = "udevadm trigger -c change";
+      TimeoutSec= "0";
+    };
+    wantedBy = [ "suspend.target" ];
+  };
+
   services = {
     printing.enable = true;
     desktopManager.plasma6.enable = true;
