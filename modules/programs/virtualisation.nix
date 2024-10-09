@@ -7,6 +7,8 @@
     virtualbox.host = {
       enable = true;
       enableExtensionPack = true;
+      enableKvm = true;
+      addNetworkInterface = false;
     };
     libvirtd.enable = true;
   };
@@ -23,6 +25,9 @@
     home.packages = with pkgs; [
       virt-manager
       virtualbox
+      libvirt-glib
+      looking-glass-client
+      qemu_kvm
     ];
   };
 }
