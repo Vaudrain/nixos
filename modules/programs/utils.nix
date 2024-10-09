@@ -13,10 +13,11 @@
       fastfetch
       ventoy-full
       gnome-disk-utility
-      psensor
+      resources
       deluge
       baobab
       usbutils
+      pciutils
 
       # Media utils
       vlc
