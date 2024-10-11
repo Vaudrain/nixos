@@ -1,5 +1,4 @@
 [
-  ./firefox/firefox.nix
   ./3dPrinting.nix
   ./communication.nix
   ./dev.nix
