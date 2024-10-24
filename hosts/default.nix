@@ -82,7 +82,7 @@
     description = "Fixes behringer audio interface suspend bug";
     unitConfig = {
       type = "simple";
-      after = "suspend.target";
+      after = "lock.target";
     };
     serviceConfig = {
       User = "root";
@@ -91,7 +91,7 @@
       ExecStart = "udevadm trigger -c change";
       TimeoutSec= "0";
     };
-    wantedBy = [ "suspend.target" ];
+    wantedBy = [ "lock.target" ];
   };
 
   services = {
@@ -104,13 +104,10 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
-      extraConfig.pipewire."92-low-latency" = {
+      extraConfig.pipewire = {
         context.properties = {
-          default.clock.rate = 192000;
-          default.clock.allowed-rates = "48000,88200,96000,176400,192000";
-          default.clock.quantum = 1024;
-          default.clock.min-quantum = 32;
-          default.clock.max-quantum = 8192;
+        default.clock.rate = 192000;
+        default.clock.allowed-rates = "48000,88200,96000,176400,192000";
         };
         context.modules = [
           {

@@ -18,6 +18,7 @@
       baobab
       usbutils
       pciutils
+      alsa-utils
 
       # Media utils
       vlc
