@@ -6,7 +6,7 @@
   ./games.nix
   ./multimedia-editing.nix
   ./utils.nix
-  ./virtualisation.nix
+  # ./virtualisation.nix
 
   ./unsortedApps.nix
 ]
