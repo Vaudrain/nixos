@@ -18,7 +18,7 @@
     };
 
     configFile = {
-      "kcminputrc"."Keyboard"."NumLock".value = 0;
+      "kcminputrc"."Keyboard"."NumLock".value = 1;
     };
 
     workspace = {
