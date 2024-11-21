@@ -18,7 +18,7 @@
     };
 
     configFile = {
-      "kcminputrc"."Keyboard"."NumLock".value = 1;
+      "kcminputrc"."Keyboard"."NumLock".value = 0;
     };
 
     workspace = {
@@ -45,7 +45,7 @@
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
-                "applications:one.ablaze.floorp.desktop"
+                "applications:floorp.desktop"
                 "applications:vesktop.desktop"
               ];
             };
