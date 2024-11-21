@@ -10,6 +10,7 @@
       plasma-browser-integration
       ncdu
       mullvad-vpn
+      floorp
       fastfetch
       ventoy-full
       gnome-disk-utility
