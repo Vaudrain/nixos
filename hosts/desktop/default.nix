@@ -55,6 +55,7 @@
   };
 
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
+  nixpkgs.config.allowUnsupportedSystem = true;
   #nixpkgs.config.cudaSupport = true; # For Cuda
 
 
