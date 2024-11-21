@@ -130,6 +130,7 @@
     mullvad-vpn = {
       enable = true;
       enableExcludeWrapper = true;
+      package = pkgs.mullvad-vpn;
     };
     resolved = {
       enable = true;

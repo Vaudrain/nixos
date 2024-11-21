@@ -9,7 +9,6 @@
       appimage-run
       plasma-browser-integration
       ncdu
-      mullvad-vpn
       floorp
       fastfetch
       ventoy-full
