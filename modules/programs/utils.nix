@@ -9,7 +9,7 @@
       appimage-run
       plasma-browser-integration
       ncdu
-      floorp
+      # floorp
       fastfetch
       ventoy-full
       gnome-disk-utility
