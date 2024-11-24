@@ -28,7 +28,7 @@
       iconTheme = "candy-icons";
     };
 
-    workspace.wallpaper = lib.cleanSource ./wallpapers/IsleOfDorn.jpg;
+    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeper.jpg;
 
     panels = [
       {
@@ -55,7 +55,6 @@
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
           "org.kde.plasma.digitalclock"
-          "org.kde.plasma.marginsseperator"
         ];
       }
     ];
