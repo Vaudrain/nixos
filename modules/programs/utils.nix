@@ -7,7 +7,7 @@
       xwayland
       xwaylandvideobridge
       appimage-run
-      plasma-browser-integration
+      kdePackages.plasma-browser-integration
       ncdu
       # floorp
       fastfetch
@@ -21,6 +21,8 @@
       alsa-utils
       bottles
       killall
+      glib
+      dbus
 
       # Media utils
       vlc
