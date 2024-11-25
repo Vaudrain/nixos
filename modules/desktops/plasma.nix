@@ -33,27 +33,74 @@
     panels = [
       {
         location = "top";
-        height = 36;
+        height = 50;
         screen = 1;
         hiding = "none";
         widgets = [
-          "org.kde.plasma.kickoff"
           {
-            name = "org.kde.plasma.icontasks";
-            config = {
-              General.launchers = [
+            name = "org.kde.plasma.kickoff";
+            config.General = {
+              icon = "nix-snowflake-white";
+              alphaSort = true;
+            };
+          }
+          {
+            iconTasks = {
+              launchers = [
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
                 "applications:firefox.desktop"
                 "applications:vesktop.desktop"
               ];
+              appearance = {
+                rows = {
+                  maximum = 2;
+                  multirowView = "lowSpace";
+                };
+                showTooltips = false;
+              };
             };
           }
           "org.kde.plasma.panelspacer"
-          "plasmusic-toolbar"
+          {
+            plasmusicToolbar = {
+              panelIcon = {
+                albumCover = {
+                  fallbackToIcon = false;
+                  useAsIcon = true;
+                  radius = 0;
+                };
+              };
+              musicControls.showPlaybackControls = false;
+              songText = {
+                displayInSeparateLines = true;
+                maximumWidth = 640;
+                scrolling = {
+                  behavior = "alwaysScroll";
+                  speed = 3;
+                };
+              };
+            };
+          }          
           "org.kde.plasma.panelspacer"
-          "org.kde.plasma.systemtray"
+          {
+            systemTray.items = {
+              shown = [
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.volume"
+                "org.kde.plasma.notifications"
+              ];
+              hidden = [
+                "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.clipboard"
+                "org.kde.plasma.polychromatic"
+                "org.kde.plasma.brightness"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.keyboardindicator"
+              ];
+            };
+          }
           "org.kde.plasma.digitalclock"
         ];
       }
