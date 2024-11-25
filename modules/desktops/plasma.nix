@@ -45,7 +45,7 @@
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
-                "applications:one.ablaze.floorp.desktop"
+                "applications:firefox.desktop"
                 "applications:vesktop.desktop"
               ];
             };
