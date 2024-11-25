@@ -30,13 +30,13 @@
             sugarCandyNix = {
                 enable = true;
                 settings = {
-                    Background = ../wallpapers/Hallowfall.jpg;
+                    Background = lib.cleanSource ../wallpapers/CitizenSleeper2.png;
                     ScreenWidth = 2560;
                     ScreenHeight = 1400;
                     FormPosition = "center";
                     RoundCorners = 2;
                     HaveFormBackground = false;
-                    PartialBlur = true;
+                    PartialBlur = false;
                     ForceLastUser = true;
                     ForcePasswordFocus = true;
                     HeaderText = "";
