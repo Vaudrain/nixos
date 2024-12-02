@@ -12,18 +12,13 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelModules = [ 
-      "vfio_pci"
-      "vfio"
-      "vfio_iommu_type1"
-      "vfio_virqfd"
       "uinput" 
-      "kvmfr"
       "nvidia"
       "nvidia_modeset"
       "nvidia_uvm"
       "nvidia_drm"
     ];
-    blacklistedKernelModules = [ "nouveau" ];
+    blacklistedKernelModules = [ "nouveau" "amdgpu" ];
     kernelParams = [ 
       "nomodeset"
       "quiet"
@@ -32,11 +27,7 @@
       "nvidia-drm.fbdev=1"
       "NVreg_EnableGpuFirmware=0"
       "nvidia.NVreg_EnableGpuFirmware=0"
-      "amd_iommu=on"
-      "iommu=pt"
-      "vfio-pci.ids=\"1002:164e,1002:1640\""
       "usbcore.autosuspend=-1"
-      "amdgpu.sg_display=0"
     ];
     loader = {
       efi = {
