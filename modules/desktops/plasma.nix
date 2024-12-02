@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     plasmusic-toolbar
+    plasma-panel-colorizer
   ];
 
   programs.plasma = {
@@ -98,10 +99,26 @@
                 "org.kde.plasma.brightness"
                 "org.kde.plasma.battery"
                 "org.kde.plasma.keyboardindicator"
+                "org.kde.plasma.libdiscover"
               ];
             };
           }
           "org.kde.plasma.digitalclock"
+          {
+            plasmaPanelColorizer = {
+              general.hideWidget = true;
+              panelBackground = {
+                originalBackground = {
+                  hide = true;
+                  opacity = 0;
+                };
+                customBackground = {
+                  enable = true;
+                  opacity = 0.70;
+                };
+              };
+            };
+          }
         ];
       }
     ];
