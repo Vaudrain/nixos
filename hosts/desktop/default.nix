@@ -10,8 +10,7 @@
   '';
 
   boot = {
-    kernelPackages = pkgs.linuxPackages
-    ;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelModules = [ 
       "vfio_pci"
       "vfio"
