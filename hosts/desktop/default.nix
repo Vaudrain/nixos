@@ -27,6 +27,7 @@
     blacklistedKernelModules = [ "nouveau" ];
     kernelParams = [ 
       "nomodeset"
+      "quiet"
       "nouveau.modeset=0"
       "nvidia-drm.modeset=1"
       "nvidia-drm.fbdev=1"
@@ -53,6 +54,7 @@
       };
       timeout = 1;   
     };
+    plymouth.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
