@@ -4,7 +4,7 @@
   name = "DungeonDraftFhs";
   targetPkgs = pkgs:
     with pkgs; [
-      alsaLib
+      alsa-lib
       libglvnd
       pulseaudio
     ] ++ (with pkgs.xorg; [

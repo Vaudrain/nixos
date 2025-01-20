@@ -11,7 +11,7 @@
       zlib
       libkrb5
       stdenv.cc.cc.lib
-      gnome.zenity
+      zenity
     ] ++ (with pkgs.xorg; [
       libX11
       libXcursor
