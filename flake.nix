@@ -32,7 +32,7 @@
     user = "vaud";
     system = "x86_64-linux";
     overlays = [
-      nur.overlay
+      nur.overlays.default
     ];
   in
   {

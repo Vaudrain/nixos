@@ -52,8 +52,8 @@
   #nixpkgs.config.cudaSupport = true; # For Cuda
 
 
+  services.pulseaudio.enable = false;
   hardware = {
-    pulseaudio.enable = false;
     openrazer.enable = true;
     bluetooth = {
       enable = true;
@@ -82,9 +82,9 @@
     version = "565.77"; # To update - change version number, try to rebuild, replace sha hashes
 
     sha256_64bit = "sha256-CnqnQsRrzzTXZpgkAtF7PbH9s7wbiTRNcM0SPByzFHw=";
-    sha256_aarch64 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
-    openSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
+    sha256_aarch64 = "sha256-wnDjC099D8d9NJSp9D0CbsL+vfHXyJFYYgU3CwcqKww=";
+    openSha256 = "sha256-wnDjC099D8d9NJSp9D0CbsL+vfHXyJFYYgU3CwcqKww=";
     settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-    persistencedSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
+    persistencedSha256 = "sha256-wnDjC099D8d9NJSp9D0CbsL+vfHXyJFYYgU3CwcqKww=";
   };
 }
