@@ -5,5 +5,6 @@
       github-desktop
       vscode
       nodejs_22
+      godot_4
     ];
 }
