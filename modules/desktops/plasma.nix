@@ -52,7 +52,7 @@
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
                 "applications:firefox.desktop"
-                "applications:vesktop.desktop"
+                "applications:dev.vencord.Vesktop.desktop"
               ];
               appearance = {
                 rows = {
