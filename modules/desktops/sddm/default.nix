@@ -12,6 +12,10 @@
     ];
     services = {
         xserver = {
+            enable = true;
+            displayManager.setupCommands = ''
+                ${pkgs.xorg.xrandr}/bin/xrandr  --output DP-0 --primary --mode 2560x1440 --output HDMI-0 --off --output DP-3 --off
+                '';
             xkb = {
                 layout = "gb";
                 variant = "";
@@ -23,10 +27,12 @@
             package = pkgs.lib.mkForce pkgs.libsForQt5.sddm;
             extraPackages = pkgs.lib.mkForce [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
             autoNumlock = true;
-            wayland.enable = true;
-            setupScript = ''
-                ${pkgs.numlockx}/bin/numlockx on
-            '';
+            wayland.enable = false; # Not using wayland due to monitor constraints
+            settings = { 
+                General = {
+                    Numlock = "on";
+                };
+            };
             sugarCandyNix = {
                 enable = true;
                 settings = {
