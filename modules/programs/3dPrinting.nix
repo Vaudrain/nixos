@@ -2,7 +2,7 @@
 
 {
   home-manager.users.${user}.home.packages = with pkgs; [
-      bambu-studio
+      orca-slicer
     ];
 
   services = {

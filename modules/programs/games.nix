@@ -12,5 +12,7 @@
       obs-studio
       obs-studio-plugins.obs-vkcapture
       xivlauncher
+      prismlauncher
+      wowup-cf
     ];
 }
