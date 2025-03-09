@@ -60,6 +60,7 @@
                   multirowView = "lowSpace";
                 };
                 showTooltips = false;
+                iconSpacing = "small";
               };
             };
           }
