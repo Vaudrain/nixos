@@ -5,7 +5,7 @@
       docker
       polychromatic
       xwayland
-      xwaylandvideobridge
+      kdePackages.xwaylandvideobridge
       appimage-run
       kdePackages.plasma-browser-integration
       ncdu
@@ -27,7 +27,7 @@
       # Media utils
       vlc
       feh
-      kate
+      kdePackages.kate
       webcamoid
     ];
 

@@ -28,6 +28,8 @@
       "NVreg_EnableGpuFirmware=0"
       "nvidia.NVreg_EnableGpuFirmware=0"
       "usbcore.autosuspend=-1"
+      "clearcpuid=514"
+      "nvidia.NVreg_OpenRmEnableUnsupportedGpus=1"
     ];
     loader = {
       efi = {
@@ -64,12 +66,12 @@
     };
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = false;
-      open = false;
+      powerManagement.enable = true;
+      open = true;
       nvidiaSettings = true;
-      forceFullCompositionPipeline = true;
+      # forceFullCompositionPipeline = true;
       nvidiaPersistenced = true;
-      #package = config.boot.kernelPackages.nvidiaPackages.latest;
+      # package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
     graphics = {
       enable = true;
@@ -79,10 +81,10 @@
   };
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "570.86.16"; # To update - change version number, try to rebuild, replace sha hashes
-    sha256_64bit = "sha256-RWPqS7ZUJH9JEAWlfHLGdqrNlavhaR1xMyzs8lJhy9U=";
-    openSha256 = "sha256-3mp9X/oV8o2TH9720NnoXROxQ4g98nNee+DucXpQy3w=";
-    settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-    persistencedSha256 = "sha256-3mp9X/oV8o2TH9720NnoXROxQ4g98nNee+DucXpQy3w=";
+    version = "570.124.04"; # To update - change version number, try to rebuild, replace sha hashes
+    sha256_64bit = "sha256-G3hqS3Ei18QhbFiuQAdoik93jBlsFI2RkWOBXuENU8Q=";
+    openSha256 = "sha256-KCGUyu/XtmgcBqJ8NLw/iXlaqB9/exg51KFx0Ta5ip0=";
+    settingsSha256 = "sha256-LNL0J/sYHD8vagkV1w8tb52gMtzj/F0QmJTV1cMaso8=";
+    persistencedSha256 = "sha256-SHSdnGyAiRH6e0gYMYKvlpRSH5KYlJSA1AJXPm7MDRk=";
   };
 }
