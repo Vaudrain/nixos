@@ -52,6 +52,7 @@
       openrazer-daemon
       direnv
       nix-direnv-flakes
+      attr
     ];
     variables = {
       KWIN_DRM_DISABLE_TRIPLE_BUFFERING = 1;
