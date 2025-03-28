@@ -29,7 +29,7 @@
       iconTheme = "candy-icons";
     };
 
-    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeper.jpg;
+    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeper2.png;
 
     panels = [
       {
@@ -52,7 +52,8 @@
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
                 "applications:firefox.desktop"
-                "applications:dev.vencord.Vesktop.desktop"
+                #"applications:dev.vencord.Vesktop.desktop"
+                "applications:vesktop.desktop"
               ];
               appearance = {
                 rows = {

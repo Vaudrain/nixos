@@ -2,7 +2,7 @@
 
 {
   home-manager.users.${user}.home.packages = with pkgs; [      
-      # vesktop
+      vesktop
       discord
       zoom-us
       teams-for-linux 
@@ -12,7 +12,7 @@
   services = {
     flatpak = {
       packages = [
-        "dev.vencord.Vesktop"
+        #"dev.vencord.Vesktop"
       ];
     };
   };
