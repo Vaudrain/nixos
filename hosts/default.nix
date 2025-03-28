@@ -113,10 +113,10 @@
           {
             name = "libpipewire-module-protocol-pulse";
             args = {
-              pulse.min.req = "32/192000";
+              pulse.min.req = "512/192000";
               pulse.default.req = "1024/192000";
               pulse.max.req = "8192/192000";
-              pulse.min.quantum = "32/192000";
+              pulse.min.quantum = "512/192000";
               pulse.max.quantum = "8192/192000";
             };
           }
@@ -158,6 +158,11 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
+    };
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
     };
     package = pkgs.nixVersions.stable;
     registry.nixpkgs.flake = inputs.nixpkgs;
