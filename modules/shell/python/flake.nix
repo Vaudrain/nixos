@@ -15,7 +15,7 @@
           packages = with pkgs.${system}; [
             poetry
             python3
-            jupyter
+            virtualenv
           ];
           shellHook = ''
           echo "Testing - activating venv"
