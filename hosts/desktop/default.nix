@@ -56,7 +56,7 @@
 
   services.pulseaudio.enable = false;
   hardware = {
-    openrazer.enable = true;
+    openrazer.enable = false; # temporarily broken
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -81,7 +81,7 @@
   };
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "570.133.07"; # To update - change version number, try to rebuild, replace sha hashes
+    version = "570.133.07"; # To update - change version number, try to rebuild, replace sha hashes # See https://www.nvidia.com/en-gb/geforce/drivers/ for updates
     sha256_64bit = "sha256-LUPmTFgb5e9VTemIixqpADfvbUX1QoTT2dztwI3E3CY=";
     openSha256 = "sha256-9l8N83Spj0MccA8+8R1uqiXBS0Ag4JrLPjrU3TaXHnM=";
     settingsSha256 = "sha256-XMk+FvTlGpMquM8aE8kgYK2PIEszUZD2+Zmj2OpYrzU=";
