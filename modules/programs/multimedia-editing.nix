@@ -6,5 +6,6 @@
       openscad
       davinci-resolve
       gimp
+      reaper
     ];
 }
