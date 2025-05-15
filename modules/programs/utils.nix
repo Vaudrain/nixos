@@ -11,7 +11,6 @@
       ncdu
       firefox
       fastfetch
-      ventoy-full
       gnome-disk-utility
       resources
       deluge
