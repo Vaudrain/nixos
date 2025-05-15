@@ -3,10 +3,12 @@
 {
   home-manager.users.${user}.home.packages = with pkgs; [
       github-desktop
-      vscode
+      #vscode
+      vscode-fhs
       nodejs_22
-      godot_4
+      godot
       python313
       python313Packages.pip
+      dotnet-sdk
     ];
 }

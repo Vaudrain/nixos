@@ -39,8 +39,7 @@
       ripgrep
       wine
       winetricks
-      wineWowPackages.staging
-      wineWowPackages.waylandFull
+      protontricks
       fd
       unzip
       p7zip
@@ -53,6 +52,7 @@
       direnv
       nix-direnv-flakes
       attr
+      earlyoom
     ];
     variables = {
       KWIN_DRM_DISABLE_TRIPLE_BUFFERING = 1;
@@ -66,6 +66,9 @@
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
+        wineWowPackages.staging
+        wineWowPackages.waylandFull
+        wineWow64Packages.waylandFull
         # Add any missing dynamic libraries for unpackaged programs
         # here, NOT in environment.systemPackages
       ];

@@ -23,12 +23,14 @@
       killall
       glib
       dbus
+      sunwait
 
       # Media utils
       vlc
       feh
       kdePackages.kate
       webcamoid
+      mpg123
     ];
 
   services = {

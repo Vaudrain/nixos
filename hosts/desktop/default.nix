@@ -56,7 +56,7 @@
 
   services.pulseaudio.enable = false;
   hardware = {
-    openrazer.enable = false; # temporarily broken
+    openrazer.enable = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;

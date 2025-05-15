@@ -7,5 +7,6 @@
       davinci-resolve
       gimp
       reaper
+      aseprite
     ];
 }
