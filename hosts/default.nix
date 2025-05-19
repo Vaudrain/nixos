@@ -130,6 +130,33 @@
           resample.quality = 1;
         };
       };
+      wireplumber = {
+        enable = true;
+        extraConfig = {
+          "hide-GA102" = {
+            "monitor.alsa.rules" = [
+              {
+                "matches" = [
+                  {
+                    "node.name" = "alsa_output.pci-0000_01_00.1.pro-output-3";
+                  }
+                  {
+                    "node.name" = "alsa_output.pci-0000_01_00.1.pro-output-8";
+                  }
+                  {
+                    "node.name" = "alsa_output.pci-0000_01_00.1.pro-output-9";
+                  }
+                ];
+                "actions" = {
+                  "update-props" = {
+                    "node.disabled" = "true";
+                  };
+                };
+              }
+            ];
+          };
+        };
+      };
     };
     mullvad-vpn = {
        enable = true;
