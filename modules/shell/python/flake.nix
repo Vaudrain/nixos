@@ -3,29 +3,12 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
-      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-      pkgs = forAllSystems (system: nixpkgs.legacyPackages.${system});
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      devShells = forAllSystems (system: {
-        default = pkgs.${system}.mkShellNoCC {
-          packages = with pkgs.${system}; [
-            poetry
-            python3
-            virtualenv
-          ];
-          shellHook = ''
-          echo "Testing - activating venv"
-          VENV=.venv
-          if test ! -d $VENV; then
-            virtualenv $VENV
-          fi
-          source ./$VENV/bin/activate
-          '';
-        };
-      });
+      devShells.x86_64-linux.default = (import ./shell.nix { inherit pkgs; });
     };
 }

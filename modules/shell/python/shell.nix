@@ -5,14 +5,18 @@
 pkgs.mkShell
 {
   nativeBuildInputs = with pkgs; [
-    python310Packages.poetry-core
-    python310
+    poetry
+    python3
+    virtualenv
   ];
 
   shellHook = ''
-    echo "weclome"
+  echo "Python development environment entered."
+  VENV=.venv
+  if test ! -d $VENV; then
+    virtualenv $VENV
+  fi
+  source ./$VENV/bin/activate
   '';
-
-  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.libGL}/lib:${pkgs.glib.out}/lib";
 
 }
