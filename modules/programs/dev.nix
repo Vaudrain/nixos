@@ -7,8 +7,7 @@
       vscode-fhs
       nodejs_22
       godot
-      python313
-      python313Packages.pip
+      direnv
       dotnet-sdk
     ];
 }
