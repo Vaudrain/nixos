@@ -163,16 +163,16 @@
        enableExcludeWrapper = true;
        package = pkgs.mullvad-vpn;
      };
-    # resolved = {
-    #   enable = true;
-    #   dnssec = "true";
-    #   domains = [ "~." ];
-    #   fallbackDns = [
-    #     "1.1.1.1"
-    #     "1.0.0.1"
-    #   ];
-    #   dnsovertls = "true";
-    # };
+    resolved = {
+      enable = true;
+      dnssec = "true";
+      domains = [ "~." ];
+      fallbackDns = [
+        "1.1.1.1"
+        "1.0.0.1"
+      ];
+      dnsovertls = "true";
+    };
     flatpak = {
       enable = true;
       update = {
