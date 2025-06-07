@@ -31,6 +31,10 @@
       kdePackages.kate
       webcamoid
       mpg123
+
+      # Fonts
+      nerd-fonts.iosevka
+      nerd-fonts.jetbrains-mono
     ];
 
   services = {
