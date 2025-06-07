@@ -23,6 +23,7 @@
       glib
       dbus
       sunwait
+      starship
 
       # Media utils
       vlc
