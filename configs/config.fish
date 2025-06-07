@@ -1,0 +1,1 @@
+/home/vaud/.config/fish/config.fish

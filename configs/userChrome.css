@@ -2,7 +2,6 @@
 @-moz-document url(chrome://browser/content/browser.xhtml) {
 
     #nav-bar {
-    customize this value.
     --navbar-margin: -30px;
     margin: -30px 10px 10px 10px !important;
     border-top-width: 0px !important;
