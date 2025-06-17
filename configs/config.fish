@@ -1,1 +1,7 @@
-/home/vaud/.config/fish/config.fish
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+direnv hook fish | source
+set DIRENV_LOG_FORMAT ""
+starship init fish | source
