@@ -12,13 +12,15 @@ let
 in
 {
   home-manager.users.${user}.home.packages = with pkgs; [
-pinnedRemmina.remmina
+      pinnedRemmina.remmina
       docker
       polychromatic
       xwayland
       kdePackages.xwaylandvideobridge
       appimage-run
       kdePackages.plasma-browser-integration
+      kdePackages.koi
+      kdePackages.yakuake
       ncdu
       firefox
       fastfetch
@@ -35,6 +37,7 @@ pinnedRemmina.remmina
       dbus
       sunwait
       starship
+      pulseaudio
 
       # Media utils
       vlc
