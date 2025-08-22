@@ -14,5 +14,7 @@
       xivlauncher
       prismlauncher
       wowup-cf
+      lsfg-vk
+      lsfg-vk-ui
     ];
 }
