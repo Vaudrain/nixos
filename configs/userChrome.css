@@ -77,4 +77,9 @@
     #browser {
         z-index: -1;
     }
+
+    /* Compatability tweak for native tab groups and Simple Tab Groups extension */
+    tab-group:has(> tab[hidden="true"]) {
+        display: none !important;
+    }
 }
