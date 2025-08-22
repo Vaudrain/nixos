@@ -28,6 +28,7 @@
       sunwait
       starship
       pulseaudio
+      veracrypt
 
       # Media utils
       vlc
