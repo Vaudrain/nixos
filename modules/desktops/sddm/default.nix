@@ -36,9 +36,9 @@
             sugarCandyNix = {
                 enable = true;
                 settings = {
-                    Background = lib.cleanSource ../wallpapers/CitizenSleeper2.png;
-                    ScreenWidth = 2560;
-                    ScreenHeight = 1400;
+                    Background = lib.cleanSource ../wallpapers/CitizenSleeperEye.png;
+                    ScreenWidth = 3840;
+                    ScreenHeight = 2160;
                     FormPosition = "center";
                     RoundCorners = 2;
                     HaveFormBackground = false;

@@ -28,13 +28,13 @@
       iconTheme = "candy-icons";
     };
 
-    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeper2.png;
+    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeperEye.png;
 
     panels = [
       {
         location = "top";
         height = 50;
-        screen = 1;
+        screen = 2;
         hiding = "none";
         widgets = [
           {
@@ -77,7 +77,7 @@
               musicControls.showPlaybackControls = false;
               songText = {
                 displayInSeparateLines = true;
-                maximumWidth = 640;
+                maximumWidth = 300;
                 scrolling = {
                   behavior = "alwaysScroll";
                   speed = 3;

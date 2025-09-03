@@ -36,6 +36,7 @@
       kdePackages.kate
       webcamoid
       mpg123
+      vulkan-hdr-layer-kwin6
 
       # Fonts
       nerd-fonts.iosevka
