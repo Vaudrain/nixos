@@ -9,5 +9,6 @@
       godot
       direnv
       dotnet-sdk
+      godot
     ];
 }
