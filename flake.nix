@@ -52,7 +52,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${user}.imports = [
-              plasma-manager.homeManagerModules.plasma-manager
+              plasma-manager.homeModules.plasma-manager
               ./modules/desktops/plasma.nix
             ];
             nixpkgs.config.pkgs = nixpkgs;

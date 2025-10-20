@@ -10,7 +10,7 @@
   '';
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelModules = [ 
       "uinput" 
       "nvidia"
@@ -81,10 +81,10 @@
   };
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "580.82.07"; # To update - change version number, try to rebuild, replace sha hashes # See https://www.nvidia.com/en-gb/geforce/drivers/ for updates
-    sha256_64bit = "sha256-Bh5I4R/lUiMglYEdCxzqm3GLolQNYFB0/yJ/zgYoeYw=";
-    openSha256 = "sha256-8/7ZrcwBMgrBtxebYtCcH5A51u3lAxXTCY00LElZz08=";
-    settingsSha256 = "sha256-lx1WZHsW7eKFXvi03dAML6BoC5glEn63Tuiz3T867nY=";
-    persistencedSha256 = "sha256-1JCk2T3H5NNFQum0gA9cnio31jc0pGvfGIn2KkAz9kA=";
+    version = "580.95.05"; # To update - change version number, try to rebuild, replace sha hashes # See https://www.nvidia.com/en-gb/geforce/drivers/ for updates
+    sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
+    openSha256 = "sha256-RFwDGQOi9jVngVONCOB5m/IYKZIeGEle7h0+0yGnBEI=";
+    settingsSha256 = "sha256-F2wmUEaRrpR1Vz0TQSwVK4Fv13f3J9NJLtBe4UP2f14=";
+    persistencedSha256 = "sha256-QCwxXQfG/Pa7jSTBB0xD3lsIofcerAWWAHKvWjWGQtg=";
   };
 }
