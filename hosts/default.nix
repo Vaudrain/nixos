@@ -75,6 +75,8 @@
     };
   };
 
+  boot.kernelModules = [ "ntsync" ];
+
   fonts.fontDir.enable = true;
 
   xdg.portal = {
@@ -112,8 +114,8 @@
       jack.enable = true;
       extraConfig.pipewire = {
         context.properties = {
-        default.clock.rate = 192000;
-        default.clock.allowed-rates = "48000,88200,96000,176400,192000";
+          default.clock.rate = 192000;
+          default.clock.allowed-rates = "48000,88200,96000,176400,192000";
           default.clock.force-rate = 192000;
           default.clock.quantum = 128;
           default.clock.min-quantum = 128;
