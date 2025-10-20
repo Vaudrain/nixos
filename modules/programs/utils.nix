@@ -28,7 +28,6 @@
       sunwait
       starship
       pulseaudio
-      veracrypt
 
       # Media utils
       vlc
@@ -41,6 +40,10 @@
       # Fonts
       nerd-fonts.iosevka
       nerd-fonts.jetbrains-mono
+
+      # Security
+      bitwarden-desktop
+      veracrypt
     ];
 
   services = {
