@@ -114,16 +114,38 @@
         context.properties = {
         default.clock.rate = 192000;
         default.clock.allowed-rates = "48000,88200,96000,176400,192000";
+          default.clock.force-rate = 192000;
+          default.clock.quantum = 128;
+          default.clock.min-quantum = 128;
         };
+        context.objects = [
+          {
+            "factory" = "api.alsa.pcm.sink";
+            "args" = {
+              "node.name" = "alsa_output.usb-BEHRINGER_UMC204HD_192k-00.pro-output-0";
+              "audio.format" = "S24LE";
+              "audio.rate" = 192000;
+              "audio.channels" = 2;
+            };
+          }
+          {
+            "factory" = "api.alsa.pcm.sink";
+            "args" = {
+              "node.name" = "alsa_input.usb-BEHRINGER_UMC204HD_192k-00.pro-input-0";
+              "audio.format" = "S24LE";
+              "audio.rate" = 192000;
+              "audio.channels" = 2;
+            };
+          }
+        ];
         context.modules = [
           {
             name = "libpipewire-module-protocol-pulse";
             args = {
-              pulse.min.req = "512/192000";
-              pulse.default.req = "1024/192000";
-              pulse.max.req = "8192/192000";
-              pulse.min.quantum = "512/192000";
-              pulse.max.quantum = "8192/192000";
+              pulse.min.req     = "128/192000";
+              pulse.default.req = "128/192000";
+              pulse.min.frag    = "128/192000";
+              pulse.min.quantum = "128/192000";
             };
           }
         ];
