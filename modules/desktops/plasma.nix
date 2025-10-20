@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     plasmusic-toolbar
     plasma-panel-colorizer
+    kdePackages.full
   ];
 
   programs.plasma = {

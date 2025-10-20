@@ -1,20 +1,30 @@
 { pkgs, lib, ... }:
 
+let
+    background-package = pkgs.stdenvNoCC.mkDerivation {
+        name = "background-image";
+        src = ../wallpapers/CitizenSleeperEye.png;
+        dontUnpack = true;
+        installPhase = ''
+        cp $src $out
+        '';
+        };
+in
 {
     environment.systemPackages = with pkgs; [ 
+        (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+            [General]
+            background = "${background-package}"
+            '')
         pkgs.xorg.xrandr
-        libsForQt5.qt5.qtquickcontrols2   
-        libsForQt5.qt5.qtgraphicaleffects 
-        libsForQt5.qt5.qtbase 
-        libsForQt5.qt5.qtsvg
-        qt6.qt5compat
-        qt6.qtsvg
+        # sddm-astronaut
+        pkgs.numlockx
     ];
     services = {
         xserver = {
             enable = true;
             displayManager.setupCommands = ''
-                ${pkgs.xorg.xrandr}/bin/xrandr  --output DP-0 --primary --mode 2560x1440 --output HDMI-0 --off --output DP-3 --off
+                ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --primary --output DP-0 --off --output DP-3 --off
                 '';
             xkb = {
                 layout = "gb";
@@ -24,8 +34,6 @@
 
         displayManager.sddm = {
             enable = true;
-            package = pkgs.lib.mkForce pkgs.libsForQt5.sddm;
-            extraPackages = pkgs.lib.mkForce [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
             autoNumlock = true;
             wayland.enable = false; # Not using wayland due to monitor constraints
             settings = { 
@@ -33,22 +41,7 @@
                     Numlock = "on";
                 };
             };
-            sugarCandyNix = {
-                enable = true;
-                settings = {
-                    Background = lib.cleanSource ../wallpapers/CitizenSleeperEye.png;
-                    ScreenWidth = 3840;
-                    ScreenHeight = 2160;
-                    FormPosition = "center";
-                    RoundCorners = 2;
-                    HaveFormBackground = false;
-                    PartialBlur = false;
-                    ForceLastUser = true;
-                    ForcePasswordFocus = true;
-                    HeaderText = "";
-                    BlurRadius = 10;
-                };
-            };
+            theme = "breeze";
         };
     };
 }
