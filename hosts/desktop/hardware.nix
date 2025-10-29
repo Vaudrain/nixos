@@ -19,13 +19,13 @@
 
   fileSystems."/" =
     { 
-      device = "/dev/disk/by-uuid/8516d470-6600-422c-93f7-81bf1fbf1115";
+      device = "/dev/disk/by-uuid/411db3b4-242b-4645-bccc-7390078e4df5";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
     { 
-      device = "/dev/disk/by-uuid/B4A2-E38F";
+      device = "/dev/disk/by-uuid/C035-69F7";
       fsType = "vfat";
     };
 
@@ -37,7 +37,7 @@
 
   swapDevices =
     [ 
-      { device = "/dev/disk/by-uuid/d043b879-f309-42b5-b184-e59ceec0ad8f"; }
+      { device = "/dev/disk/by-uuid/15092f37-7643-445e-9d08-7aef40d42ed2"; }
     ];
 
   networking = {
