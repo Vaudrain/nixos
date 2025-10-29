@@ -18,17 +18,26 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8516d470-6600-422c-93f7-81bf1fbf1115";
+    { 
+      device = "/dev/disk/by-uuid/8516d470-6600-422c-93f7-81bf1fbf1115";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B4A2-E38F";
+    { 
+      device = "/dev/disk/by-uuid/B4A2-E38F";
       fsType = "vfat";
     };
 
+  fileSystems."/run/media/Windows" = 
+    {
+      device = "/dev/disk/by-uuid/14BA16C7BA16A4F0";
+      fsType = "ntfs";
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d043b879-f309-42b5-b184-e59ceec0ad8f"; }
+    [ 
+      { device = "/dev/disk/by-uuid/d043b879-f309-42b5-b184-e59ceec0ad8f"; }
     ];
 
   networking = {

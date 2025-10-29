@@ -2,20 +2,20 @@
 @-moz-document url(chrome://browser/content/browser.xhtml) {
 
     #nav-bar {
-    --navbar-margin: -30px;
-    margin: -30px 10px 10px 10px !important;
-    border-top-width: 0px !important;
-    border-radius: 20px !important;
-    z-index: -100 !important;
-    opacity: 0 !important;
-    transition: all 0.5s ease !important;
-    transition-delay: 0.3s !important;
-    transition: z-index 0.5s jump-both, opacity 0.5s linear, margin 0.5s linear !important;
-    min-height: auto !important;
-    position: absolute !important;
-    left: 0px !important;
-    right: 0px !important;
-    top: 44px !important;
+        --navbar-margin: -30px;
+        margin: -30px 10px 10px 10px !important;
+        border-top-width: 0px !important;
+        border-radius: 20px !important;
+        z-index: -100 !important;
+        opacity: 0 !important;
+        transition: all 0.5s ease !important;
+        transition-delay: 0.3s !important;
+        transition: z-index 0.5s jump-both, opacity 0.5s linear, margin 0.5s linear !important;
+        min-height: auto !important;
+        position: absolute !important;
+        left: 0px !important;
+        right: 0px !important;
+        top: 44px !important;
     }
 
     #nav-bar #urlbar {
@@ -35,12 +35,12 @@
     #navigator-toolbox:focus-within > #nav-bar,
     #navigator-toolbox:hover > #nav-bar
     {
-    margin: 10px 10px 10px 10px !important;
-    z-index: 100 !important;
-    opacity: 1 !important;
-    min-height: auto !important;
-    transition: all 0.1s ease !important;
-    transition: z-index 0.5s jump-both, opacity 0.5s linear, margin 0.5s linear !important;
+        margin: 10px 10px 10px 10px !important;
+        z-index: 100 !important;
+        opacity: 1 !important;
+        min-height: auto !important;
+        transition: all 0.1s ease !important;
+        transition: z-index 0.5s jump-both, opacity 0.5s linear, margin 0.5s linear !important;
     }
     #navigator-toolbox:focus-within > #nav-bar #urlbar,
     #navigator-toolbox:hover > #nav-bar #urlbar
@@ -50,23 +50,24 @@
     }
 
     #sidebar-select-box {
-    width: 1px !important;
-    max-width: 1px !important;
-    min-width: 1px !important;
+        width: 1px !important;
+        max-width: 1px !important;
+        min-width: 1px !important;
     }
     #sidebar-select-box:hover {
-    width: 42px !important;
-    max-width: 42px !important;
-    min-width: 42px !important;
+        width: 42px !important;
+        max-width: 42px !important;
+        min-width: 42px !important;
     }
 
     #PlacesToolbar {
         margin-top: 24px !important;
     }
 
-    .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"])
+    tab-group tab.tabbrowser-tab[fadein]&:not([pinned])&:not([style*="max-width"])&:not([selected])&:not([soundplaying])
     {
         max-width: 100px;
+        /* Set width with about:config tabminwidth */
     }
 
     body {
