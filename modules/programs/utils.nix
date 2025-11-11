@@ -1,18 +1,21 @@
 { pkgs, user, ... }:
 
 {
+  programs.firefox.enable = true;
+  programs.firefox.package = pkgs.firefox.override {
+    cfg.nativeMessagingHosts.packages = [
+      pkgs.kdePackages.plasma-browser-integration
+    ];
+  };
   home-manager.users.${user}.home.packages = with pkgs; [
       remmina
       docker
       polychromatic
       xwayland
-      kdePackages.xwaylandvideobridge
       appimage-run
-      kdePackages.plasma-browser-integration
       kdePackages.koi
       kdePackages.yakuake
       ncdu
-      firefox
       fastfetch
       gnome-disk-utility
       resources
