@@ -50,9 +50,10 @@
       libnotify
       openrazer-daemon
       direnv
-      nix-direnv-flakes
+      nix-direnv
       attr
       earlyoom
+      keyd
     ];
     variables = {
       KWIN_DRM_DISABLE_TRIPLE_BUFFERING = 1;
@@ -101,6 +102,39 @@
     };
     wantedBy = [ "lock.target" ];
   };
+
+  systemd.services.keyd = {
+    description = "key remapping daemon";
+    enable = true;
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.keyd}/bin/keyd";
+    };
+    wantedBy = [ "sysinit.target" ];
+    requires = [ "local-fs.target" ];
+    after = [ "local-fs.target" ];
+  };
+
+  # TODO Nixify this / reset razer config first?
+# [ids]
+# 1532:0067
+
+# [main]
+
+# kp1 = kp1
+# mouse1 = kp2
+# kp3 = kp3
+# kp4 = kp4
+# mouse2 = kpslash
+# kp6 = kp6
+# kp7 = kp7
+# kp8 = kp8
+# kp9 = kp9
+# kpslash = kp5
+# pause = macro(f23 pause)
+# end = mouse2
+
+
 
   services = {
     printing.enable = true;
