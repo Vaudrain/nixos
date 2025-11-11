@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     plasmusic-toolbar
     plasma-panel-colorizer
-    kdePackages.full
   ];
 
   programs.plasma = {
@@ -52,8 +51,7 @@
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
                 "applications:firefox.desktop"
-                #"applications:dev.vencord.Vesktop.desktop"
-                "applications:vesktop.desktop"
+                "applications:discord.desktop"
               ];
               appearance = {
                 rows = {
