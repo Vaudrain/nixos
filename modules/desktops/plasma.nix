@@ -28,7 +28,7 @@
       iconTheme = "candy-icons";
     };
 
-    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeperEye.png;
+    workspace.wallpaper = lib.cleanSource ./wallpapers/CitizenSleeper2.png;
 
     panels = [
       {
@@ -68,7 +68,7 @@
             plasmusicToolbar = {
               panelIcon = {
                 albumCover = {
-                  fallbackToIcon = false;
+                  fallbackToIcon = true;
                   useAsIcon = true;
                   radius = 0;
                 };
@@ -76,23 +76,23 @@
               musicControls.showPlaybackControls = false;
               songText = {
                 displayInSeparateLines = true;
-                maximumWidth = 300;
+                maximumWidth = 250;
                 scrolling = {
-                  behavior = "alwaysScroll";
+                  behavior = "scrollOnHover";
                   speed = 3;
                 };
               };
-            };
+            };`
           }          
           "org.kde.plasma.panelspacer"
           {
             systemTray.items = {
               shown = [
-                "org.kde.plasma.bluetooth"
                 "org.kde.plasma.volume"
                 "org.kde.plasma.notifications"
               ];
               hidden = [
+                "org.kde.plasma.bluetooth"
                 "org.kde.plasma.networkmanagement"
                 "org.kde.plasma.clipboard"
                 "org.kde.plasma.polychromatic"
@@ -100,6 +100,10 @@
                 "org.kde.plasma.battery"
                 "org.kde.plasma.keyboardindicator"
                 "org.kde.plasma.libdiscover"
+                "org.kde.plasma.mediacontroller"
+                "Yakuake"
+                "remmina-icon"
+                "polychromatic-tray-applet"
               ];
             };
           }
