@@ -82,7 +82,7 @@
                   speed = 3;
                 };
               };
-            };`
+            };
           }          
           "org.kde.plasma.panelspacer"
           {
