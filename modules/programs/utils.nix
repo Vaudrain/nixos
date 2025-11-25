@@ -1,5 +1,12 @@
 { pkgs, user, ... }:
 
+let
+  remmina_with_old_ffmpeg = pkgs.remmina.override {
+    freerdp = pkgs.freerdp.override {
+      ffmpeg = pkgs.ffmpeg_7-full;
+    };
+  };
+in
 {
   programs.firefox.enable = true;
   programs.firefox.package = pkgs.firefox.override {
@@ -8,7 +15,7 @@
     ];
   };
   home-manager.users.${user}.home.packages = with pkgs; [
-      remmina
+      remmina_with_old_ffmpeg
       docker
       polychromatic
       xwayland
@@ -31,6 +38,7 @@
       sunwait
       starship
       pulseaudio
+      rustdesk
 
       # Media utils
       vlc
