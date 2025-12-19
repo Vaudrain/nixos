@@ -7,6 +7,7 @@
       davinci-resolve
       shotcut
       gimp
+      inkscape
       reaper
       aseprite
     ];
