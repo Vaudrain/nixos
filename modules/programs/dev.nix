@@ -10,5 +10,7 @@
       direnv
       dotnet-sdk
       godot
+      yarn
+      pnpm
     ];
 }
