@@ -151,8 +151,8 @@
           default.clock.rate = 192000;
           default.clock.allowed-rates = "48000,88200,96000,176400,192000";
           default.clock.force-rate = 192000;
-          default.clock.quantum = 128;
-          default.clock.min-quantum = 128;
+          default.clock.quantum = 1024;
+          default.clock.min-quantum = 1024;
         };
         context.objects = [
           {
@@ -178,15 +178,15 @@
           {
             name = "libpipewire-module-protocol-pulse";
             args = {
-              pulse.min.req     = "128/192000";
-              pulse.default.req = "128/192000";
-              pulse.min.frag    = "128/192000";
-              pulse.min.quantum = "128/192000";
+              pulse.min.req     = "1024/192000";
+              pulse.default.req = "1024/192000";
+              pulse.min.frag    = "1024/192000";
+              pulse.min.quantum = "1024/192000";
             };
           }
         ];
         stream.properties = {
-          node.latency = "8/192000";
+          node.latency = "128/192000";
           resample.quality = 1;
         };
       };
