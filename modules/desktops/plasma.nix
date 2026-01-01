@@ -50,7 +50,7 @@
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:obsidian.desktop"
-                "applications:firefox.desktop"
+                "applications:librewolf.desktop"
                 "applications:discord.desktop"
               ];
               appearance = {

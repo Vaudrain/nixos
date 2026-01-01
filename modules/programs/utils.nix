@@ -6,6 +6,15 @@ let
       ffmpeg = pkgs.ffmpeg_7-full;
     };
   };
+  librewolf_with_integration = pkgs.librewolf.override {
+    cfg = {
+      nativeMessagingHosts = {
+        packages = [
+          pkgs.kdePackages.plasma-browser-integration
+        ];
+      };
+    };
+  };
 in
 {
   programs.firefox.enable = true;
@@ -39,6 +48,7 @@ in
       starship
       pulseaudio
       rustdesk
+      librewolf_with_integration
 
       # Media utils
       vlc
