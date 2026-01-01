@@ -52,7 +52,7 @@
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
   nixpkgs.config.allowUnsupportedSystem = true;
 
-zramSwap = {
+  zramSwap = {
     enable = true;
     memoryPercent = 25;
   };
@@ -73,7 +73,7 @@ zramSwap = {
       powerManagement.enable = true;
       open = true;
       nvidiaSettings = true;
-      # forceFullCompositionPipeline = true;
+      forceFullCompositionPipeline = false;
       nvidiaPersistenced = true;
       # package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
@@ -85,10 +85,11 @@ zramSwap = {
   };
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    version = "580.105.08"; # To update - change version number, try to rebuild, replace sha hashes # See https://www.nvidia.com/en-gb/geforce/drivers/ for updates
-    sha256_64bit = "sha256-2cboGIZy8+t03QTPpp3VhHn6HQFiyMKMjRdiV2MpNHU=";
-    openSha256 = "sha256-FGmMt3ShQrw4q6wsk8DSvm96ie5yELoDFYinSlGZcwQ=";
-    settingsSha256 = "sha256-YvzWO1U3am4Nt5cQ+b5IJ23yeWx5ud1HCu1U0KoojLY=";
-    persistencedSha256 = "sha256-qh8pKGxUjEimCgwH7q91IV7wdPyV5v5dc5/K/IcbruI=";
+    version = "590.48.01"; # To update - change version number, try to rebuild, replace sha hashes # See https://www.nvidia.com/en-gb/geforce/drivers/ for updates
+    sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
+    openSha256 = "sha256-hECHfguzwduEfPo5pCDjWE/MjtRDhINVr4b1awFdP44=";
+    settingsSha256 = "sha256-NWsqUciPa4f1ZX6f0By3yScz3pqKJV1ei9GvOF8qIEE=";
+    persistencedSha256 = "sha256-wsNeuw7IaY6Qc/i/AzT/4N82lPjkwfrhxidKWUtcwW8=
+";
   };
 }
