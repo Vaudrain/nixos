@@ -52,6 +52,11 @@
   nixpkgs.config.allowUnfree = true; # For Nvidia drivers
   nixpkgs.config.allowUnsupportedSystem = true;
 
+zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
+
 
   services.pulseaudio.enable = false;
   hardware = {
